@@ -19,7 +19,7 @@
     </head>
 
     <body>
-      
+
         <nav class="white" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="{% url 'home' %}" class="brand-logo"><img src = "{% static 'img/alab-logo.png' %}"></a>
@@ -32,13 +32,13 @@
                     <li><a href="#">Hot Spot.</a></li>
                 </ul>
 
-                
+
                 <ul class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
                     <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="#">{{ user.first_name }}</a></li>
                 {% else %}
                     <li><a href="{% url 'users:login' %}">Log In</a></li>
-                    <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="#">Sign Up</a></li>
+                    <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="{% url 'users:signup' %}">Sign Up</a></li>
                 {% endif %}
                 </ul>
 
