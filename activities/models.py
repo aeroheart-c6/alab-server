@@ -22,8 +22,14 @@ class Activity(models.Model):
     datetime_held = models.DateTimeField()
     datetime_created = models.DateTimeField(auto_now_add=True)
     
-    categories = models.ManyToManyField('activities.Category', through='activities.ActivityCategory')
-    participants = models.ManyToManyField('users.User', through='activities.Participant')
+    categories = models.ManyToManyField('activities.Category', **{
+                  'related_name': 'activities',
+                  'through': 'activities.ActivityCategory',
+                 })
+    participants = models.ManyToManyField('users.User', **{
+                       'related_name': 'activities',
+                       'through': 'activities.ActivityParticipant'
+                   })
 
 
 class ActivityCategory(models.Model):
@@ -31,12 +37,12 @@ class ActivityCategory(models.Model):
     category = models.ForeignKey('activities.Category')
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=50)
-    slug = models.SlugField()
-
-
-class Participant(models.Model):
+class ActivityParticipant(models.Model):
     activity = models.ForeignKey('activities.Activity')
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     datetime_joined = models.DateTimeField(auto_now_add=True)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    slug = models.SlugField()
