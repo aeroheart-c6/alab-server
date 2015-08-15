@@ -21,6 +21,7 @@ class Activity(models.Model):
     address = models.CharField(max_length=500)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
+    photo = models.ImageField(upload_to="event/", **optional)
     duration = models.DurationField()
     datetime_held = models.DateTimeField()
     datetime_created = models.DateTimeField(auto_now_add=True)

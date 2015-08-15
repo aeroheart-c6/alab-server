@@ -34,6 +34,7 @@ class UserProfile(models.Model):
     city = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     timezone = models.CharField(max_length=100, **optional)
+    photo = models.ImageField(upload_to="user/", **optional)
 
     def __unicode__(self):
         return self.user.full_name
