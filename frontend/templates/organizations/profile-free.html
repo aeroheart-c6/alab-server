@@ -1,8 +1,17 @@
+{% load i18n staticfiles %}
+
 {{ name }}
 {{ address }}
 {{ city }}
 {{ country }}
 
 {% if name and user %}
-<input type="button" id="join-organization" value="Join">
+<input type="button" id="join-organization-button" data-organization="{{ id }}" value="Join">
 {% endif %}
+
+
+<script src="{% url 'js_reverse' %}" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/organizations/join_organization.js' %}"></script>
+</html>

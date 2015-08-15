@@ -64,6 +64,7 @@ class OrganizationMember(models.Model):
     organization = models.ForeignKey('organizations.Organization')
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     datetime_joined = models.DateTimeField(auto_now_add=True)
+    is_confirmed = models.BooleanField(default=False)
 
     def __unicode__(self):
         return "{}, member of {}".format(self.user, self.organization)

@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.views.generic.base import View
 
@@ -22,6 +22,7 @@ class OrganizationProfileFreeView(SiteWideMixin, View):
 
         org_id = self.kwargs.get('id')
         organization = Organization.objects.get(id=int(org_id))
+        context['id'] = org_id
         context['user'] = self.request.user
         context['name'] = organization.name
         context['address'] = organization.address
@@ -78,10 +79,22 @@ class OrganizationApplicationView(SiteWideMixin, View):
 class JoinOrganizationView(SiteWideMixin, View):
 
     def get(self, request, *args, **kwargs):
+        context = {}
         organization = Organization.objects.get(id=int(self.kwargs.get('id')))
         user = request.user
         if not organization.is_premium:
             OrganizationMember.objects.create(
                 organization=organization,
                 user=user,
+                is_confirmed=True,
             )
+        else:
+            OrganizationMember.objects.create(
+                organization=organization,
+                user=user,
+                is_confirmed=False,
+            )
+
+        context['message'] = "SUCCESS"
+
+        return JsonResponse(context)
