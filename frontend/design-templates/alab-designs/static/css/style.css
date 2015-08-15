@@ -1,0 +1,305 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  	color: #444;
+}
+
+nav ul a{
+  	font-size: 14px;
+  	font-weight: 700;
+}
+
+nav.white{
+  	box-shadow: none;
+}
+
+p {
+  	line-height: 2rem;
+}
+
+.button-collapse {
+  	color: #e53935;
+}
+
+.parallax-container {
+  	min-height: 380px;
+  	line-height: 0;
+  	height: auto;
+  	color: rgba(255,255,255,.9);
+}
+
+#logo-container{
+  	display: none;
+}
+
+.parallax-container .section {
+  	width: 100%;
+}
+
+.icon-block {
+ 	 padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  	font-size: inherit;
+}
+
+footer.page-footer {
+  	margin: 0;
+}
+
+/*********************************************
+**********************************************
+	        NAVIGATION CUSTOM
+*********************************************
+*********************************************/
+
+.menu-logo {
+  	height: auto;
+  	line-height: 29px;
+}
+
+.menu-logo-wrap{
+  	margin-right: 20px;
+}
+
+.menu-logo-wrap:hover {
+  	background: none;
+}
+
+.brand-logo img{
+  	padding-top: 8px;
+}
+
+.menu-logo img{
+  	margin-top: 8px; 
+}
+
+.nav-button .btn-small{
+  	height: 36px;
+  	line-height: 36px;
+  	border-radius: 10px;
+  	color: #fff;
+}
+
+nav ul li:hover, nav ul li.active{
+  	background: none;
+}
+
+
+
+/*********************************************
+**********************************************
+	        HEADER TOP
+*********************************************
+*********************************************/
+.parallax-container.header-top{
+	display: table;
+    position: inherit;
+}
+
+.parallax-container.header-top .section{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.parallax{
+	overflow: hidden;
+}
+
+.card-org .card .card-content{
+	position: relative;
+}
+
+.card-org .card .card-content .card-title{
+	font-size: 20px;
+	line-height: 24px;
+    width: 80%;
+    display: block;
+    min-height: 50px;
+}
+
+.card-org i.right{    
+	position: absolute;
+    right: 11px;
+    top: 20px;
+}
+.card-org .card .card-image img{
+	height: 100%;
+	width: auto;
+}
+
+.card-org .card .card-reveal .card-title{
+	cursor: pointer;
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    width: 80%;
+}
+
+.card-org .card .card-image{
+	text-align: center;
+}
+
+.card-org .card .card-image img:nth-child(2){
+	width: 100%;
+	height: auto;
+	z-index: -1;
+	position: absolute;
+	top: 0;
+
+  	-webkit-filter: blur(1px);
+  	-moz-filter: blur(1px);
+  	-o-filter: blur(1px);
+  	-ms-filter: blur(1px);
+  	filter: blur(1px);
+}
+.card-org .card-reveal p{
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.card-org .card .card-action a{
+	color:#e53935;
+    font-size: 14px;
+}
+
+.card-org .tabs{
+	width: 100%;
+    margin: 40px auto;
+}
+
+.button-wrap {
+	text-align: center;
+	display: block;
+	padding: 10px 0 0;
+}
+
+.button-wrap .waves-effect{
+    font-size: 10px;
+}
+
+.center-text{
+	text-align: center;
+	margin: 50px 0 0;
+}
+
+.filters-wrap{
+	margin-bottom: 30px;
+}
+
+h4.title{
+	margin: 0;
+}
+
+.collection-bottom{
+	margin-bottom: 20px;
+}
+
+.collection-bottom span{
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.card-org .collection .collection-item.avatar{
+	width: 48%;
+	display: inline-block; 
+	border: none;
+	text-align: left;
+}
+	
+.card-org .collection{
+	margin: 0.5rem 0 1rem 0;
+    border: none;
+    border-radius: 2px;
+    overflow: inherit;
+    display: inline-block;
+    text-align: center;
+}
+
+.red-bg{
+	background: #e53935;
+	color: #fff;
+}
+
+.page-footer h5{
+	font-size: 18px;
+    font-weight: 700;
+}
+
+.page-footer li{
+	font-size: 14px;
+    font-weight: 300;
+}
+/*********************************************
+**********************************************
+	        MOBILE CUSTOM
+*********************************************
+*********************************************/
+@media only screen and (max-width : 1185px) {
+	.card-org .card .card-content .card-title {
+	    max-height: 50px;
+	    overflow: hidden;
+	}
+}
+@media only screen and (min-width : 993px) {
+	/*********************************************
+	**********************************************
+		        CARD FEATURES
+	*********************************************
+	*********************************************/
+	.card-org .card .card-image{
+		    height: 121px;
+	}
+
+	.card-org .featured .card .card-image{
+		height: 418px;
+	}
+}
+
+@media only screen and (min-width : 601px) and (max-width : 992px) {
+	/*********************************************
+	**********************************************
+		        CARD FEATURES
+	*********************************************
+	*********************************************/
+	.card-org .card .card-image{
+		    height: 121px;
+	}
+
+	.card-org .featured .card .card-image{
+		    height: 121px;
+	}
+}
+
+@media only screen and (max-width : 992px) {
+  	.parallax-container .section {
+    	position: absolute;
+    	top: 40%;
+  	}
+
+  	#logo-container{
+    	display: block;
+  	}
+
+	.card-org .collection .collection-item.avatar{
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+	.card-org .card .card-image{
+		    height: 121px;
+	}
+
+	.card-org .featured .card .card-image{
+		    height: 121px;
+	}
+}
