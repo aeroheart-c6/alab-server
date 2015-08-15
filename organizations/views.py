@@ -21,6 +21,7 @@ class OrganizationProfileFreeView(SiteWideMixin, View):
 
         org_id = self.kwargs.get('id')
         organization = Organization.objects.get(id=int(org_id))
+        context['user'] = self.request.user
         context['name'] = organization.name
         context['address'] = organization.address
         context['city'] = organization.city
