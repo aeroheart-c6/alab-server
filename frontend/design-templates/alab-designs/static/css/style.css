@@ -452,6 +452,48 @@ nav .user-drop img{
 	font-size: 14px;
     font-weight: 300;
 }
+
+.event-org{
+	height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.event{
+	margin-top: 30px;
+}
+
+.funding{
+	font-size: 32px;
+}
+
+.funding small{
+	font-size: 12px;
+}
+
+.funding-days{
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.event-user{
+	margin: 20px auto;
+	width: 100%;
+}
+
+.event-user img{
+	width: 50px;
+}
+
+.event-user-pic, .event-user-details{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.event-user-affiliate img{
+	height: 12px;
+	width: 12px;
+}
 /*********************************************
 **********************************************
 	        MOBILE CUSTOM
