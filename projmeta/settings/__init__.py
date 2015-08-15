@@ -18,13 +18,13 @@ APPEND_SLASH = False
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    
+
     'formatters': {
         'basic': {
             'format': '[%(asctime)s %(levelname)s] %(name)s: %(message)s',
         }
     },
-    
+
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
@@ -40,7 +40,7 @@ LOGGING = {
             'backupCount': 10,
         },
     },
-    
+
     'loggers': {
         'default': {
             'handlers': ['console'],
@@ -56,6 +56,8 @@ LOGGING = {
 WSGI_APPLICATION = 'projcore.wsgi.application'
 ROOT_URLCONF = 'projcore.urls'
 AUTH_USER_MODEL = 'users.User'
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'users:login'
 
 INTERNAL_APPS = (
     'security',
