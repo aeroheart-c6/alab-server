@@ -9,7 +9,7 @@
                     console.log('SUCCESS!');
                     // add modal to display successful adding here
                 }
-            }
+            },
             error: function(response) {
                 console.log('ERROR!');
                 // add modal to display error here
