@@ -17,6 +17,8 @@ class Organization(models.Model):
     address = models.CharField(max_length=500)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
+    is_premium = models.BooleanField(default=False)
+    date_created = models.DateTimeField(auto_now_add=True, **optional)
     
     administrators = models.ManyToManyField('users.User', **{
                                              'related_name': 'organizations_managed',
