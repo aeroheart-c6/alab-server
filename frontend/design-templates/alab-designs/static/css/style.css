@@ -39,6 +39,9 @@ p {
   	display: none;
 }
 
+.parallax.doc{
+	top: 60px;
+}
 .parallax-container .section {
   	width: 100%;
 }
@@ -373,6 +376,16 @@ h4.title{
 
 	.card-org .collection .collection-item.avatar{
 		width: 90%;
+	}
+	.login-wrap.signup{
+		width: 300px;
+	}
+	.login-wrap.signup .input-field.col.s6{
+		width: 90%;
+	}
+
+	.free-width{
+		width: 100%;
 	}
 }
 
