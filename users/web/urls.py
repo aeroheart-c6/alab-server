@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout_then_login, name='logout'),
     url(r'^signup/$', SignUpView.as_view(), name='signup'),
     url(r'^(?P<username>[\w.@+-]+)/', include([
-        url(r'^$', ProfileView.as_view()),
-        url(r'^edit/$', ProfileEditorView.as_view()),
+        url(r'^$', ProfileView.as_view(), name='profile'),
+        url(r'^edit/$', ProfileEditorView.as_view(), name='profile_edit'),
     ])),
 ]

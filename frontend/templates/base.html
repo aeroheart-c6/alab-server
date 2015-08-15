@@ -35,7 +35,7 @@
 
                 <ul class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
-                    <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="#">{{ user.first_name }}</a></li>
+                    <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="{% url 'users:profile' username=user.username %}">{{ user.first_name }}</a></li>
                 {% else %}
                     <li><a href="{% url 'users:login' %}">Log In</a></li>
                     <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="{% url 'users:signup' %}">Sign Up</a></li>
@@ -60,7 +60,7 @@
             <div class="container">
                 <div class="row">
                 <div class="col l6 s12">
-                    <a class="white-text" href="#!"><img src = "{% static 'img/alabw.png' %}"></a>
+                    <a class="white-text" href="{% url 'home' %}"><img src = "{% static 'img/alabw.png' %}"></a>
                 </div>
                 <div class="col l3 s12">
                     <h5 class="white-text">Explore</h5>

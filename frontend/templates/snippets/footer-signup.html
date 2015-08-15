@@ -1,0 +1,16 @@
+{% if not user.is_authenticated %}
+<div class="red-bg">
+    <div class="container">
+        <div class="section">
+            <div class="row card-org">
+                <div class="col s12 center-text">
+                    <h4> Find what interests you</h4>
+                    <p>Lorem ipsum dolor sit amet, claritas, nihil sed decima, etiam sequitur claram odio nibh, hendrerit.</p><a href="{% url 'users:signup' %}" id="download-button" class="btn-large waves-effect waves-light white lighten-1">Get Started</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endif %}
+

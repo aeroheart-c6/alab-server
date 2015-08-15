@@ -77,6 +77,7 @@ INSTALLED_APPS = (
     'cities_light',
     'django_js_reverse',
     'social.apps.django_app.default',
+    'easy_thumbnails'
 ) + INTERNAL_APPS
 
 MIDDLEWARE_CLASSES = (
@@ -199,6 +200,16 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.user.user_details',
     'users.pipeline.create_profile',
 )
+
+
+#--------------------------------------------------
+# Easy Thumbnail Config
+#--------------------------------------------------
+THUMBNAIL_ALIASES = {
+    '': {
+        'avatar': {'size': (100, 100), 'crop': True},
+    },
+}
 
 
 #--------------------------------------------------

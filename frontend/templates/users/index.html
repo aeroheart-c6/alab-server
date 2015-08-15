@@ -1,3 +1,10 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+{% endblock content %}
+
 <h1>Alab</h1>
 {% if user.is_authenticated %}
     <p>hello {{user.full_name}}</p>

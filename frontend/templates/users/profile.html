@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load i18n staticfiles %}
 
@@ -18,3 +19,26 @@
     </script>
     <script type="text/javascript" src="{% static 'js/activities/gallery.js' %}"></script>
 {% endblock %}
+{% extends "base.html" %}
+{% load staticfiles thumbnail %}
+
+{% block content %}
+
+<div class="container">
+    <div class="section">
+        <div class="row" style="">
+            <div class="col-custom x1">
+                <img src="{{ user.profile.photo|thumbnail_url:'avatar' }}" class="circle">
+            </div>
+            <div class = "col-custom x2">
+                <div class = "username-prof">@{{ user.username }}</div>
+                <div class = "name-prof">{{ user.full_name }}</div>
+                <div class = "details-prof"><i class="ver large material-icons">verified_user</i>&nbsp; Verified User &nbsp;|&nbsp; <i class="loc large material-icons">location_on</i>&nbsp; from Davao City</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "snippets/footer-signup.html" %}
+{% endblock content %}
+>>>>>>> Stashed changes

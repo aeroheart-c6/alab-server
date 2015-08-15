@@ -84,7 +84,7 @@ footer.page-footer {
 }
 
 .menu-logo img{
-  	margin-top: 8px; 
+  	margin-top: 8px;
 }
 
 .nav-button .btn-small{
@@ -131,7 +131,7 @@ nav ul li:hover, nav ul li.active{
     min-height: 50px;
 }
 
-.card-org i.right{    
+.card-org i.right{
 	position: absolute;
     right: 11px;
     top: 20px;
@@ -223,11 +223,11 @@ h4.title{
 
 .card-org .collection .collection-item.avatar{
 	width: 48%;
-	display: inline-block; 
+	display: inline-block;
 	border: none;
 	text-align: left;
 }
-	
+
 .card-org .collection{
 	margin: 0.5rem 0 1rem 0;
     border: none;
@@ -336,6 +336,124 @@ h4.title{
 .login-wrap .input-field.select-wrap{
 	margin-top: 50px;
 }
+
+/*********************************************
+**********************************************
+            PROFILE
+*********************************************
+*********************************************/
+
+.col-custom.x2{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+.col-custom.x1{
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.col-custom.x1 img{
+    width: 100%;
+}
+.col-custom.xx2{
+    display: table-cell;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+.col-custom.xx1{
+    width: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
+}
+.col-custom.xx1 img{
+    width: 100%;
+}
+
+nav .user-drop{
+    width: 150px;
+    text-align: right;
+}
+
+nav .user-drop img{
+    float: right;
+    width: 25px;
+    margin: 20px 0px 0 10px;
+}
+
+.username-prof{
+    font-size: 20px;
+}
+
+.org .name-prof, .org .details-prof {
+    color: #fff;
+}
+.name-prof{
+    font-size: 40px;
+    line-height: 38px;
+}
+
+.details-prof .ver{
+    font-size: 16px;
+    vertical-align: middle;
+    color: #33691e;
+}
+
+.details-prof .loc{
+    font-size: 16px;
+    color: #d50000;
+    vertical-align: middle;
+}
+
+.logged-in .tabs{
+    background: none;
+}
+
+.logged-in .card-org .collection .collection-item.avatar{
+    background: transparent;
+}
+
+#dropdownx a{
+    font-size: 14px;
+    width: 100%
+}
+
+#dropdownx a i{
+    font-size: 14px;
+    float: right;
+}
+
+.nav-prof-wrap{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-prof-wrap img{
+    float: right;
+}
+
+.nav-prof{
+    width: 25px;
+}
+
+.side-prof{
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidebar-prof{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 16px;
+}
+
+.side-uname{
+    font-size: 14px;
+    font-weight: 300;
+}
+
 /*********************************************
 **********************************************
 	        PROFILE
