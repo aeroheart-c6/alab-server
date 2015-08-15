@@ -73,9 +73,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'cities_light',
     'django_js_reverse',
+    'social.apps.django_app.default',
 ) + INTERNAL_APPS
 
 MIDDLEWARE_CLASSES = (
@@ -102,6 +103,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # social auth context_processors
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -155,7 +159,50 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend', 'media')
 #--------------------------------------------------
 CITIES_LIGHT_INCLUDE_COUNTRIES = ['PH']
 
+
+#--------------------------------------------------
+# Social Auth Settings
+#--------------------------------------------------
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.instagram.InstagramOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# Facebook Keys
+FACEBOOK_KEY = '857915070962991'
+FACEBOOK_SECRET = 'd0f0719250a1df402d8efa242ebd613f'
+FACEBOOK_ACCESS_TOKEN = 'CAAMMROsNXS8BADq7cdSNHufvaDivlZBJlU4jwzcdBJqR1XWL7Lst4driVuZB8J3FnwRZCWhGZBBZBZCXuGQT97Pfy8V6B6tlGt7Yzoh4TBtWpjkUbxXdKAsZCZCRf8qYt0Kvk2XeXz1DmvDBAL2F0WQWQvK8pUZBApIHrcIrLZCtsIGE27SJJNTzdjsHiyZAJ7plkegOtZA39jscFgZDZD'
+SOCIAL_AUTH_FACEBOOK_KEY = FACEBOOK_KEY
+SOCIAL_AUTH_FACEBOOK_SECRET = FACEBOOK_SECRET
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+# Instagram Keys
+INSTAGRAM_KEY = 'f8654f82b130433cbad0c32a044d7b5e'
+INSTAGRAM_SECRET = '66436661ebe44537958c3dd97db05104'
+SOCIAL_AUTH_INSTAGRAM_KEY = INSTAGRAM_KEY
+SOCIAL_AUTH_INSTAGRAM_SECRET = INSTAGRAM_SECRET
+SOCIAL_AUTH_INSTAGRAM_REDIRECT_URL = 'http://alab:8000/complete/instagram/'
+
+# social auth steps
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.social_auth.associate_by_email',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+    'users.pipeline.create_profile',
+)
+
+
 #--------------------------------------------------
 # Overrides / Bootstrap Code
 #--------------------------------------------------
 from .local import *
+
+

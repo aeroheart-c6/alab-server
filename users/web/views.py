@@ -2,15 +2,17 @@ from __future__ import (
     absolute_import,
 )
 
+
 from cities_light.models import (
     City,
     Country,
 )
+from django.db import transaction
 from django.contrib.auth import (
     authenticate,
     login
 )
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.http.response import HttpResponseRedirect
 from django.views.generic import (
     FormView,
@@ -21,7 +23,7 @@ from users.forms import (
     SignUpProfileForm,
     UserForm,
     UserProfileForm,
-)   
+)
 from users.models import (
     User,
     UserProfile,
@@ -52,12 +54,15 @@ class SignUpView(FormView):
                 city = user_profile_form.data['city'],
                 country = user_profile_form.data['country']
             )
-            user_profile.save()
-            user = authenticate(
-                username=user_form.data.get('username'),
-                password=user_form.data.get('password1')
-            )
-            login(self.request, user)
+            try:
+                user_profile.save()
+                user = authenticate(
+                    username=user_form.data.get('username'),
+                    password=user_form.data.get('password1')
+                )
+                login(self.request, user)
+            except:
+                transaction.rollback()
             return HttpResponseRedirect(self.success_url)
         else:
             context = {}
@@ -81,10 +86,10 @@ class ProfileView(TemplateView):
     """
     def get_template_names(self):
         return 'users/profile.html'
-    
+
     def get(self, *args, **kwargs):
         return self.render_to_response({
-            
+
         })
 
 
@@ -93,7 +98,7 @@ class ProfileEditorView(TemplateView):
     """
     def get_template_names(self):
         return 'users/profile-editor.html'
-    
+
     def get(self, *args, **kwargs):
         return self.render_to_response({
             'form': UserProfileForm(),
