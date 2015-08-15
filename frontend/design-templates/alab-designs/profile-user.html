@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+  <html>
+    <head>
+      	<meta charset="utf-8">
+      	<meta name="apple-mobile-web-app-capable" content="yes">
+      	<title>Alab - Volunteerism Reinvented</title>
+      	<meta name="description" content="">
+      	<meta name="viewport" content="width=device-width">
+      	<!--Let browser know website is optimized for mobile-->
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      	<link rel="shortcut icon" href="favicon.ico">
+      	<!--Import materialize.css-->
+      	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      	<link type="text/css" rel="stylesheet" href="static/css/materialize.css"  media="screen,projection"/>
+      	<link type="text/css" rel="stylesheet" href="static/css/style.css"  media="screen,projection"/>
+    </head>
+
+    <body class = "logged-in">
+      
+      	<nav class="white" role="navigation">
+	        <div class="nav-wrapper container">
+		        <a id="logo-container" href="#" class="brand-logo"><img src = "static/img/alab-logo.png"></a>
+
+		        <ul  class="left hide-on-med-and-down">
+		          	<li class = "menu-logo-wrap"><a href="#" class = "menu-logo"><img src = "static/img/alab-logo.png"></a></li>
+		          	<li><a href="#">About.</a></li>
+		          	<li><a href="#">Organizations.</a></li>
+		          	<li><a href="#">Events.</a></li>
+		          	<li><a href="#">Hot Spot.</a></li>
+		        </ul>
+
+		        <ul class="right hide-on-med-and-down account">
+		          	<li><a class="dropdown-button user-drop" href="#" data-activates='dropdownx'>Hi, Hilton! <img class = "nav-prof circle" src = "static/img/prof.jpg"></a>
+
+						<ul id='dropdownx' class='dropdown-content'>
+						    <li class = "nav-prof-wrap"><a href = "#">Hi, Hilton! &nbsp;<img class = "nav-prof circle" src = "static/img/prof.jpg"></a></li>
+    						<li class="divider"></li>
+						    <li><a href="#!">Edit Profile &nbsp;<i class="material-icons prefix">settings</i></a></li>
+						    <li><a href="#!">Logout&nbsp;<i class="material-icons prefix">power_settings_new</i></a></li>
+						</ul>
+		          	</li>
+		        </ul>
+
+		        <ul id="nav-mobile" class="side-nav">
+		          	<li>
+		          		<a href="#">
+		          			<img class = "side-prof circle" src = "static/img/prof.jpg">
+		          			<div class ="sidebar-prof">
+		          				<div class = "side-name">Hilton Soberano</div>
+		          				<div class = "side-uname">@hiltonsoberano</div>
+		          			</div>
+		          		</a>
+		          	</li>
+    				<li class="divider"></li>
+		          	<li><a href="#">About.</a></li>
+		          	<li><a href="#">Organizations.</a></li>
+		          	<li><a href="#">Events.</a></li>
+		          	<li><a href="#">Hot Spot.</a></li>
+		          	<li><a href="#">Log In</a></li>
+		          	<li><a href="#">Sign Up</a></li>
+		        </ul>
+		        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	        </div>
+      	</nav>
+
+	  	<div class="container">
+		    <div class="section">
+				<div class="row" style = "">
+					<div class = "col-custom x1">
+						<img src = "static/img/prof.jpg" class = "circle">
+				    </div>
+					<div class = "col-custom x2">
+						<div class = "username-prof">@hiltonsoberano</div>
+						<div class = "name-prof">Hilton Soberano</div>
+						<div class = "details-prof"><i class="ver large material-icons">verified_user</i>&nbsp; Verified User &nbsp;|&nbsp; <i class="loc large material-icons">location_on</i>&nbsp; from Davao City</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	  	<div class="container">
+		    <div class="section">
+				<div class="row card-org">
+
+				    <div class="col s12">
+				      	<ul class="tabs">
+					        <li class="tab col s3"><a class="active" href="#test1">Organizations</a></li>
+					        <li class="tab col s3"><a href="#test2">Events</a></li>
+				      	</ul>
+				    </div>
+				    <div id="test1">
+
+
+						<div class="col s12 filters-wrap">
+							<div class="filter right">
+							   	<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Category</a>
+								<!-- Dropdown Structure -->
+								<ul id='dropdown1' class='dropdown-content'>
+								  	<li><a href="#!">Alright</a></li>
+								  	<li><a href="#!">Rock</a></li>
+								  	<li><a href="#!">World</a></li>
+								</ul>
+
+							    <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Sort By</a>
+								<!-- Dropdown Structure -->
+								<ul id='dropdown2' class='dropdown-content'>
+								  	<li><a href="#!">Name</a></li>
+								  	<li><a href="#!">Members</a></li>
+								</ul>
+
+							    <a class='dropdown-button btn' href='#' data-activates='dropdown3'>Order</a>
+								<!-- Dropdown Structure -->
+								<ul id='dropdown3' class='dropdown-content'>
+								  	<li><a href="#!">ASC</a></li>
+								  	<li><a href="#!">DESC</a></li>
+								</ul>
+							</div>
+						</div>
+
+			      		<div class = " col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/3.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Odio, ullamcorper littera, ad euismod<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Odio, ullamcorper littera, ad euismod<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/5.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Lorem ipsum dolor sit amet<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Lorem ipsum dolor sit amet<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/12.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Quam decima qui<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Quam decima qui<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/13.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/12.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/5.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Lorem ipsum dolor sit amet<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Lorem ipsum dolor sit amet<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/12.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Quam decima qui<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Quam decima qui<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+
+			      		<div class = "col s6 m3">
+						  	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      	<img class="activator" src="static/img/hd/13.jpg">
+							    </div>
+
+							    <div class="card-content">
+								      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							    </div>
+
+								<div class="card-action">
+						          <a href="#">Explore</a>
+						        </div>
+
+							    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+								      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+							    </div>
+						  	</div>
+						</div>
+				    </div>
+
+				    <div id="test2">
+
+
+						<div class="col s12 filters-wrap">
+							<div class="filter right">
+								<a class='dropdown-button btn' href='#' data-activates='dropdown5'>Category</a>
+								<!-- Dropdown Structure -->
+								<ul id='dropdown5' class='dropdown-content'>
+								  	<li><a href="#!">Tech</a></li>
+								  	<li><a href="#!">Misc</a></li>
+								  	<li><a href="#!">Pet</a></li>
+								</ul>
+
+								<a class='dropdown-button btn' href='#' data-activates='dropdown4'>Month</a>
+								<!-- Dropdown Structure -->
+								<ul id='dropdown4' class='dropdown-content'>
+								  	<li><a href="#!">Jan</a></li>
+								  	<li><a href="#!">Feb</a></li>
+								  	<li><a href="#!">Mar</a></li>
+								</ul>
+
+								<a class='dropdown-button btn' href='#' data-activates='dropdown6'>Order</a>
+								<!-- Dropdown Structure -->
+								<ul id='dropdown6' class='dropdown-content'>
+								  	<li><a href="#!">ASC</a></li>
+								  	<li><a href="#!">DESC</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+						<ul class="collection">
+					    	<li class="collection-item avatar">
+					    		<div class = "">
+						      		<img src="static/img/calamity/a4.jpg" alt="" class="circle">
+						      		<p><small>August 15, 2015</small></p>
+						      		<span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+						      		 <div class="progress">
+								      	<div class="determinate" style="width: 70%"></div>
+								  	</div>
+						      		<div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+						      	</div>
+						      		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					    	</li>
+
+
+					    	<li class="collection-item avatar ">
+					    		<div class = "">
+						      		<img src="static/img/calamity/a4.jpg" alt="" class="circle">
+						      		<p><small>August 15, 2015</small></p>
+						      		<span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+						      		 <div class="progress">
+								      	<div class="determinate" style="width: 70%"></div>
+								  	</div>
+						      		<div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+						      	</div>
+						      		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					    	</li>
+
+
+					    	<li class="collection-item avatar">
+					    		<div class = "">
+						      		<img src="static/img/calamity/a4.jpg" alt="" class="circle">
+						      		<p><small>August 15, 2015</small></p>
+						      		<span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+						      		 <div class="progress">
+								      	<div class="determinate" style="width: 70%"></div>
+								  	</div>
+						      		<div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+						      	</div>
+						      		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					    	</li>
+
+
+					    	<li class="collection-item avatar">
+					    		<div class = "">
+						      		<img src="static/img/calamity/a4.jpg" alt="" class="circle">
+						      		<p><small>August 15, 2015</small></p>
+						      		<span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+						      		 <div class="progress">
+								      	<div class="determinate" style="width: 70%"></div>
+								  	</div>
+						      		<div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+						      	</div>
+						      		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					    	</li>
+	  					</ul>
+				    </div>
+				</div>
+			 <div class="preloader-wrapper big active">
+			    <div class="spinner-layer spinner-blue-only">
+			      <div class="circle-clipper left">
+			        <div class="circle"></div>
+			      </div><div class="gap-patch">
+			        <div class="circle"></div>
+			      </div><div class="circle-clipper right">
+			        <div class="circle"></div>
+			      </div>
+			    </div>
+			  </div>
+
+		    </div>
+	 	</div>
+
+	 	<div class="red-bg">
+		  	<div class="container">
+			    <div class="section">
+					<div class="row card-org">
+					    <div class="col s12 center-text">
+							<h4> Find what interests you</h4>
+							<p>Lorem ipsum dolor sit amet, claritas, nihil sed decima, etiam sequitur claram odio nibh, hendrerit.</p><a href="#" id="download-button" class="btn-large waves-effect waves-light white lighten-1">Get Started</a>
+					    </div>
+			      	</div>
+
+			    </div>
+		 	</div>
+	 	</div>
+
+	  	<footer class="page-footer red">
+		    <div class="container">
+		      	<div class="row">
+		        <div class="col l6 s12">
+		          	<a class="white-text" href="#!"><img src = "static/img/alabw.png"></a>
+		        </div>
+		        <div class="col l3 s12">
+		          	<h5 class="white-text">Explore</h5>
+		          	<ul>
+		            	<li><a class="white-text" href="#!">Organizations</a></li>
+		            	<li><a class="white-text" href="#!">Events</a></li>
+		            	<li><a class="white-text" href="#!">Hot Spot</a></li>
+		          	</ul>
+		        </div>
+		        <div class="col l3 s12">
+		          	<h5 class="white-text">Connect</h5>
+		          	<ul>
+			            <li><a class="white-text" href="#!">Facebook</a></li>
+			            <li><a class="white-text" href="#!">Twitter</a></li>
+			            <li><a class="white-text" href="#!">Instagram</a></li>
+		          	</ul>
+		        </div>
+		      	</div>
+		    </div>
+		    <div class="footer-copyright">
+		      	<div class="container">
+		      		Alab &reg; All Rights Reserved 2015
+		      	</div>
+		    </div>
+	  	</footer>
+
+      	<!--Import jQuery before materialize.js-->
+      	<script type="text/javascript" src="static/js/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="static/js/materialize.min.js"></script>
+      	<script type="text/javascript" src="static/js/init.js"></script>
+    </body>
+  </html>

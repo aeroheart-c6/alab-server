@@ -5,7 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
-
+.logged-in{
+	background: #ebebeb;
+}
 nav ul a,
 nav .brand-logo {
   	color: #444;
@@ -179,6 +181,10 @@ nav ul li:hover, nav ul li.active{
     margin: 40px auto;
 }
 
+.logged-in .card-org .tabs{
+    margin: 0 auto 40px;
+}
+
 .button-wrap {
 	text-align: center;
 	display: block;
@@ -246,6 +252,13 @@ h4.title{
     font-weight: 300;
 }
 
+.row.org{
+	display: table;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	width: 100%;
+    height: 300px;
+}
 /*********************************************
 **********************************************
 	        LOGIN
@@ -325,6 +338,122 @@ h4.title{
 }
 /*********************************************
 **********************************************
+	        PROFILE
+*********************************************
+*********************************************/
+
+.col-custom.x2{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 30px;
+}
+.col-custom.x1{
+	width: 100px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.col-custom.x1 img{
+	width: 100%;    
+}
+.col-custom.xx2{
+	display: table-cell;
+	vertical-align: middle;
+	margin-left: 30px;
+}
+.col-custom.xx1{
+	width: 100px;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 20px;
+}
+.col-custom.xx1 img{
+	width: 100%;
+}
+
+nav .user-drop{
+	width: 150px;
+	text-align: right;
+}
+
+nav .user-drop img{
+	float: right;
+	width: 25px;
+	margin: 20px 0px 0 10px;
+}
+
+.username-prof{
+	font-size: 20px;
+}
+
+.org .name-prof, .org .details-prof {
+	color: #fff;
+}
+.name-prof{
+	font-size: 40px;
+    line-height: 38px;
+}
+
+.details-prof .ver{
+	font-size: 16px;
+    vertical-align: middle;
+	color: #33691e;
+}
+
+.details-prof .loc{
+	font-size: 16px;
+    color: #d50000;
+    vertical-align: middle;
+}
+
+.logged-in .tabs{
+	background: none;
+}
+
+.logged-in .card-org .collection .collection-item.avatar{
+	background: transparent;
+}
+
+#dropdownx a{
+	font-size: 14px;
+	width: 100%
+}
+
+#dropdownx a i{
+	font-size: 14px;
+	float: right;
+}
+
+.nav-prof-wrap{
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.nav-prof-wrap img{
+	float: right;
+}
+
+.nav-prof{
+	width: 25px;
+}
+
+.side-prof{
+	width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidebar-prof{
+	display: inline-block;
+    vertical-align: middle;
+    line-height: 16px;
+}
+
+.side-uname{
+	font-size: 14px;
+    font-weight: 300;
+}
+/*********************************************
+**********************************************
 	        MOBILE CUSTOM
 *********************************************
 *********************************************/
@@ -345,7 +474,7 @@ h4.title{
 	}
 
 	.card-org .featured .card .card-image{
-		height: 418px;
+		height: 416px;
 	}
 }
 
