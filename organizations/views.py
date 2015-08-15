@@ -1,6 +1,10 @@
-from django.shortcuts import redirect
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import redirect, render
 from django.views.generic.base import View
 
+from organizations.forms import (
+    OrganizationApplicationForm
+)
 from organizations.models import (
     Organization
 )
@@ -53,3 +57,16 @@ class OrganizationApplicationView(SiteWideMixin, View):
     def get_context_data(self, *args, **kwargs):
         context = super(OrganizationApplicationView, self).get_context_data(
             *args, **kwargs)
+        context['application_form'] = OrganizationApplicationForm()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        application_form = OrganizationApplicationForm(request.POST)
+        if application_form.is_valid():
+            application_form.save()
+            return render(request, 'organizations/application-success.html')
+        else:
+            return render(request, 'organizations/application.html', {
+                'application_form':application_form,
+                'error': application_form.errors
+            })

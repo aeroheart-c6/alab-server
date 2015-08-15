@@ -12,8 +12,6 @@ optional = {'null': True, 'blank': True}
 class Organization(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
-    longitude = models.DecimalField(max_digits=13, decimal_places=10)
-    latitude = models.DecimalField(max_digits=13, decimal_places=10)
     address = models.CharField(max_length=500)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)

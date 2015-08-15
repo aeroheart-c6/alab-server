@@ -1,0 +1,5 @@
+<form action="{% url 'organizations:org_application' %}" method="post" id="organization_application">
+    {% csrf_token %}
+    {{ application_form.as_p }}
+    <input type="submit" value="Submit">
+</form>
