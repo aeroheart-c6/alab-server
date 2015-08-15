@@ -1,0 +1,11 @@
+# Generated Files
+*.swp
+*.pyc
+.DS_Store
+
+# Local Settings
+projmeta/settings/local.py
+
+# Runtime Files
+frontend/media/
+var/

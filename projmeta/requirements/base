@@ -1,0 +1,5 @@
+Django==1.8.3
+django-cities==0.4.1
+psycopg2==2.6.1
+pytz==2015.4
+wheel==0.24.0
