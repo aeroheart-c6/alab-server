@@ -65,6 +65,8 @@ INTERNAL_APPS = (
     'organizations',
     'activities',
     'vending',
+
+    'django_js_reverse',
 )
 INSTALLED_APPS = (
     'django.contrib.admin',

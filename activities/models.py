@@ -52,6 +52,9 @@ class ActivityParticipant(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     datetime_joined = models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return '{} - {}'.format(self.activity, self.user)
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
