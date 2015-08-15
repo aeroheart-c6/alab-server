@@ -69,11 +69,12 @@
                         <div class = "featured col s6 m6">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'img/hd/3.jpg' %}">
+                                    <img class="activator" src="{% if organizations.0.photo %}{{ organizations.0.photo.url }}{% endif %}">
                                 </div>
 
+
                                 <div class="card-content">
-                                      <span class="card-title activator grey-text text-darken-4">Odio, ullamcorper littera, ad euismod<i class="material-icons right">more_vert</i></span>
+                                      <span class="card-title activator grey-text text-darken-4">{{ organizations.0.name}}<i class="material-icons right">more_vert</i></span>
                                 </div>
 
                                 <div class="card-action">
@@ -81,20 +82,22 @@
                                 </div>
 
                                 <div class="card-reveal">
-                                      <span class="card-title grey-text text-darken-4">Odio, ullamcorper littera, ad euismod<i class="material-icons right">close</i></span>
-                                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                      <span class="card-title grey-text text-darken-4">{{ organizations.0.name}}<i class="material-icons right">close</i></span>
+                                      <p>{{ organizations.0.description }}</p>
                                 </div>
                             </div>
                         </div>
-
+                        {% if organizations|length > 1 %}
+                        {% for organization in organizations %}
+                        {% ifnotequal organization organizations.0 %}
                         <div class = "col s6 m3">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'img/hd/5.jpg' %}">
+                                    <img class="activator" src="{% if organization.photo %}{{ organization.photo.url }}{% endif %}">
                                 </div>
 
                                 <div class="card-content">
-                                      <span class="card-title activator grey-text text-darken-4">Lorem ipsum dolor sit amet<i class="material-icons right">more_vert</i></span>
+                                      <span class="card-title activator grey-text text-darken-4">{{ organization.name }}<i class="material-icons right">more_vert</i></span>
                                 </div>
 
                                 <div class="card-action">
@@ -102,75 +105,14 @@
                                 </div>
 
                                 <div class="card-reveal">
-                                      <span class="card-title grey-text text-darken-4">Lorem ipsum dolor sit amet<i class="material-icons right">close</i></span>
-                                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                      <span class="card-title grey-text text-darken-4">{{ organization.name }}<i class="material-icons right">close</i></span>
+                                      <p>{{ organization.description }}</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class = "col s6 m3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'img/hd/12.jpg' %}">
-                                </div>
-
-                                <div class="card-content">
-                                      <span class="card-title activator grey-text text-darken-4">Quam decima qui<i class="material-icons right">more_vert</i></span>
-                                </div>
-
-                                <div class="card-action">
-                                  <a href="#">Explore</a>
-                                </div>
-
-                                <div class="card-reveal">
-                                      <span class="card-title grey-text text-darken-4">Quam decima qui<i class="material-icons right">close</i></span>
-                                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class = "col s6 m3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'img/hd/13.jpg' %}">
-                                </div>
-
-                                <div class="card-content">
-                                      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                </div>
-
-                                <div class="card-action">
-                                  <a href="#">Explore</a>
-                                </div>
-
-                                <div class="card-reveal">
-                                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class = "col s6 m3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="{% static 'img/hd/12.jpg' %}">
-                                </div>
-
-                                <div class="card-content">
-                                      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                </div>
-
-                                <div class="card-action">
-                                  <a href="#">Explore</a>
-                                </div>
-
-                                <div class="card-reveal">
-                                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        {% endifnotequal %}
+                        {% endfor %}
+                        {% endif %}
 
                     <div id="test2">
 

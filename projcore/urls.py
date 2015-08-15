@@ -2,6 +2,7 @@ from __future__ import (
     absolute_import,
 )
 
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
@@ -17,3 +18,10 @@ urlpatterns = [
 
     url(r'^jsreverse/$', 'django_js_reverse.views.urls_js', name='js_reverse'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT
+        })
+    ]

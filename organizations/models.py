@@ -12,6 +12,7 @@ optional = {'null': True, 'blank': True}
 class Organization(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
+    description = models.TextField(**optional)
     address = models.CharField(max_length=500)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
