@@ -13,9 +13,18 @@
                         <h5 class="header col s12 light">Start your organization, create an event, fund projects, volunteer now!</h5>
                     </div>
 
+                    {% if user.is_authenticated %}
                     <div class="row center">
-                        <a href="#" id="download-button" class="btn-large waves-effect waves-light red lighten-1">Get Started</a>
+                        <a href="#" id="download-button" class="btn-large waves-effect waves-light red lighten-1">Find Activities</a>
                     </div>
+                    <div class="row center">
+                        <a href="#" id="download-button" class="btn-large waves-effect waves-light red lighten-1">Search our Community</a>
+                    </div>
+                    {% else %}
+                    <div class="row center">
+                        <a href="{% url 'users:signup' %}" id="download-button" class="btn-large waves-effect waves-light red lighten-1">Get Started</a>
+                    </div>
+                    {% endif %}
                 <br><br>
 
                 </div>
