@@ -46,3 +46,10 @@ class OrganizationProfilePremiumView(SiteWideMixin, View):
             return redirect('organizations:org_profile_free', id=org_id)
         return self.render_to_response(self.get_context_data())
 
+class OrganizationApplicationView(SiteWideMixin, View):
+
+    template_name = "organizations/application.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(OrganizationApplicationView, self).get_context_data(
+            *args, **kwargs)
