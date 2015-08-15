@@ -8,4 +8,4 @@ projmeta/settings/local.py
 
 # Runtime Files
 frontend/media/
-var/
+var/logs
