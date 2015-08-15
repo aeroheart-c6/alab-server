@@ -2,6 +2,9 @@ from __future__ import (
     absolute_import,
 )
 
+
+from django.utils.translation import ugettext as _
+
 from django.conf import settings
 from django.db import models
 
@@ -21,7 +24,7 @@ class Activity(models.Model):
     duration = models.DurationField()
     datetime_held = models.DateTimeField()
     datetime_created = models.DateTimeField(auto_now_add=True)
-    
+
     categories = models.ManyToManyField('activities.Category', **{
                   'related_name': 'activities',
                   'through': 'activities.ActivityCategory',
@@ -30,6 +33,13 @@ class Activity(models.Model):
                        'related_name': 'activities',
                        'through': 'activities.ActivityParticipant'
                    })
+
+    class Meta:
+        verbose_name = _('Activity')
+        verbose_name_plural = _('Activities')
+
+    def __unicode__(self):
+        return '{}'.format(self.title)
 
 
 class ActivityCategory(models.Model):

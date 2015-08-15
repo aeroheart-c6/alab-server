@@ -1,0 +1,9 @@
+<html>
+    <form action="{% url 'activity:add' %}" method="POST" enctype="multipart/form-data" id="lisitng-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-semiflat-info start">
+            <span>Add</span>
+        </button>
+    </form>
+<html>
