@@ -1,11 +1,165 @@
+{% extends 'base.html' %}
 {% load i18n staticfiles %}
 
-{{ name }}
+{% block content %}
+<div class="container">
+            <div class="section">
+                <div class="row org"style = "background: url({{ organization.photo.url }})">
+                    <div class = "col-custom xx1">
+                        <img src = "{% static 'img/pets-cash-icon.png' %}" class = "circle">
+                    </div>
+                    <div class = "col-custom xx2">
+                        <div class = "name-prof">{{ organization.name }}</div>
+                        <div class = "details-prof"><i class="ver large material-icons">verified_user</i>&nbsp; Verified Organization &nbsp;|&nbsp; <i class="loc large material-icons">location_on</i>&nbsp; from Davao City</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container org-desc">
+            <div class="section">
+                <div class="row card-org">
+
+                    <div class="col s12 center-text no-margin">
+<p>{{ organization.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <div class="row card-org">
+
+                    <div class="col s12 center-text no-margin">
+                        <h4> Events</h4>
+                    </div>
+                        <div class="col s12 filters-wrap">
+                            <div class="filter right">
+                                <a class='dropdown-button btn' href='#' data-activates='dropdown5'>Category</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown5' class='dropdown-content'>
+                                    <li><a href="#!">Tech</a></li>
+                                    <li><a href="#!">Misc</a></li>
+                                    <li><a href="#!">Pet</a></li>
+                                </ul>
+
+                                <a class='dropdown-button btn' href='#' data-activates='dropdown4'>Month</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown4' class='dropdown-content'>
+                                    <li><a href="#!">Jan</a></li>
+                                    <li><a href="#!">Feb</a></li>
+                                    <li><a href="#!">Mar</a></li>
+                                </ul>
+
+                                <a class='dropdown-button btn' href='#' data-activates='dropdown6'>Order</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown6' class='dropdown-content'>
+                                    <li><a href="#!">ASC</a></li>
+                                    <li><a href="#!">DESC</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <ul class="collection">
+                            <li class="collection-item avatar">
+                                <div class = "">
+                                    <img src="{% static 'img/calamity/a4.jpg' %}" alt="" class="circle">
+                                    <p><small>August 15, 2015</small></p>
+                                    <span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+                                     <div class="progress">
+                                        <div class="determinate" style="width: 70%"></div>
+                                    </div>
+                                    <div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+                                </div>
+                                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+
+
+                            <li class="collection-item avatar ">
+                                <div class = "">
+                                    <img src="{% static 'img/calamity/a4.jpg' %}" alt="" class="circle">
+                                    <p><small>August 15, 2015</small></p>
+                                    <span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+                                     <div class="progress">
+                                        <div class="determinate" style="width: 70%"></div>
+                                    </div>
+                                    <div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+                                </div>
+                                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+
+
+                            <li class="collection-item avatar">
+                                <div class = "">
+                                    <img src="{% static 'img/calamity/a4.jpg' %}" alt="" class="circle">
+                                    <p><small>August 15, 2015</small></p>
+                                    <span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+                                     <div class="progress">
+                                        <div class="determinate" style="width: 70%"></div>
+                                    </div>
+                                    <div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+                                </div>
+                                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+
+
+                            <li class="collection-item avatar">
+                                <div class = "">
+                                    <img src="{% static 'img/calamity/a4.jpg' %}" alt="" class="circle">
+                                    <p><small>August 15, 2015</small></p>
+                                    <span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+                                     <div class="progress">
+                                        <div class="determinate" style="width: 70%"></div>
+                                    </div>
+                                    <div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+                                </div>
+                                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </ul>
+                </div>
+             <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="red-bg">
+            <div class="container">
+                <div class="section">
+                    <div class="row card-org">
+                        <div class="col s12 center-text">
+                            <h4> Find what interests you</h4>
+                            <p>Lorem ipsum dolor sit amet, claritas, nihil sed decima, etiam sequitur claram odio nibh, hendrerit.</p><a href="#" id="download-button" class="btn-large waves-effect waves-light white lighten-1">Get Started</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/organizations/join_organization.js' %}"></script>
+{% endblock %}
+<!-- {{ name }}
 {{ address }}
 {{ city }}
-{{ country }}
+{{ country }} -->
 
-{% if name and user %}
+<!-- {% if name and user %}
 <input type="button" id="join-organization-button" data-organization="{{ id }}" value="Join">
 {% endif %}
 
@@ -15,3 +169,4 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="{% static 'js/organizations/join_organization.js' %}"></script>
 </html>
+ -->
