@@ -3,7 +3,7 @@
 
 <html>
 {% for activity in activities %} {{ activity }}
-<button class="engage-button" data-slug="{{ activity.slug }}">Engage</button>
+<button class="engage-button" data-slug="{{ activity.slug }}">Engage</button> <br>
 {% endfor %}
 
 <script src="{% url 'js_reverse' %}" type="text/javascript"></script>

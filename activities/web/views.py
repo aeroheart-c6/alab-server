@@ -50,9 +50,8 @@ class ActivitiesView(TemplateView):
 
     def get(self, *args, **kwargs):
         context = self.get_context_data()
-        # engaged_activities = ActivityParticipant.objects.filter(user=self.request.user).values_list('id')
-        # context['activities'] = Activity.objects.exclude()
-        context['activities'] = Activity.objects.all()
+        engaged_activities = ActivityParticipant.objects.filter(user=self.request.user).values_list('activity')
+        context['activities'] = Activity.objects.exclude(id__in=engaged_activities)
 
         return self.render_to_response(context)
 

@@ -8,7 +8,7 @@
             },
             url: Urls['activities:engage'](),
             success: function(response) {
-                console.log(response.message);
+                location.reload();
             }
         });
 
