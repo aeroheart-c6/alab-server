@@ -1,5 +1,60 @@
-<form action="{% url 'users:login' %}" method=POST>
+{% extends 'base.html' %}
+{% load i18n staticfiles %}
+
+{% block content %}
+        <div id="index-banner" class="parallax-container header-top">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class ="login-wrap">
+
+                        <div class="row center">
+                            <h2 class="header center text-lighten-2">Sign In</h2>
+                            <h5 class="header col s12 light">Login and continue your cause.</h5>
+                        </div>
+                         <form action="{% url 'users:login' %}" method=POST class="col s12" id="login-form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate" name="username">
+                                    <label for="icon_prefix">Username</label>
+                                </div>
+                                <div class="input-field">
+                                    <i class="material-icons prefix">lock_outline</i>
+                                    <input id="icon_telephone" type="password" class="validate" name="password">
+                                    <label for="icon_telephone">Password</label>
+                                </div>
+
+                                <div class="input-field col s12 center-text">
+                                    <a href="#" id="download-button" class="btn-large waves-effect waves-light red lighten-1 free-width">Login</a>
+                                </div>
+
+                                <div class = " col s12  btn-separator">
+                                    or
+                                </div>
+
+                                <div class="input-field col s12 center-text no-margin btn-social-wrap">
+                                    <a href="#" id="download-button" class="btn-large waves-effect waves-light fb lighten-1 free-width"><img src = "{% static 'img/social/fb.png' %}"></a><br />
+                                    <a href="#" id="download-button" class="btn-large waves-effect waves-light instagram lighten-1 free-width"><img src = "{% static 'img/social/ig.png' %}"></a>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="parallax doc"><img src="{% static 'img/background1.jpg' %}" alt="Unsplashed background img 1"></div>
+        </div>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/users/login.js' %}"></script>
+{% endblock %}
+
+<!-- <form action="{% url 'users:login' %}" method=POST>
 {% csrf_token %}
     {{form.as_p}}
     <input type="submit">
-</form>
+</form> -->
+

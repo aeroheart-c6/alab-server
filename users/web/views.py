@@ -12,6 +12,7 @@ from django.views.generic import (
     TemplateView
 )
 
+from cities_light.models import City, Country
 from users.forms import UserForm, SignUpProfileForm
 from users.models import UserProfile
 
@@ -26,6 +27,8 @@ class SignUpView(FormView):
         context = super(SignUpView, self).get_context_data(**kwargs)
         context['user_form'] = UserForm
         context['user_profile_form'] = SignUpProfileForm
+        context['cities'] = City.objects.all()
+        context['countries'] = Country.objects.all()
         return context
 
     def post(self, request, *args, **kwargs):
@@ -49,6 +52,8 @@ class SignUpView(FormView):
             context = {}
             context['user_form'] = user_form
             context['user_profile_form'] = user_profile_form
+            context['cities'] = City.objects.all()
+            context['countries'] = Country.objects.all()
             return self.render_to_response(context)
 signup_view = SignUpView.as_view()
 
@@ -56,4 +61,8 @@ signup_view = SignUpView.as_view()
 class IndexView(TemplateView):
 
     template_name = 'users/index.html'
+
+    def get(self, request, *args, **kwargs):
+        return HttpResponseRedirect(reverse_lazy('home'))
+
 index_view = IndexView.as_view()

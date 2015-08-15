@@ -65,6 +65,7 @@ INTERNAL_APPS = (
     'organizations',
     'activities',
     'vending',
+    'cities_light',
 
     'django_js_reverse',
 )
@@ -148,6 +149,11 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend', 'media')
 
+
+#--------------------------------------------------
+# DJANGO CITIES LIGHT
+#--------------------------------------------------
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['PH']
 
 #--------------------------------------------------
 # Overrides / Bootstrap Code
