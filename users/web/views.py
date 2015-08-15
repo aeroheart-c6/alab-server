@@ -1,6 +1,11 @@
 from __future__ import (
     absolute_import,
 )
+
+from cities_light.models import (
+    City,
+    Country,
+)
 from django.contrib.auth import (
     authenticate,
     login
@@ -12,9 +17,15 @@ from django.views.generic import (
     TemplateView
 )
 
-from cities_light.models import City, Country
-from users.forms import UserForm, SignUpProfileForm
-from users.models import UserProfile
+from users.forms import (
+    SignUpProfileForm,
+    UserForm,
+    UserProfileForm,
+)   
+from users.models import (
+    User,
+    UserProfile,
+)
 
 
 class SignUpView(FormView):
@@ -55,7 +66,6 @@ class SignUpView(FormView):
             context['cities'] = City.objects.all()
             context['countries'] = Country.objects.all()
             return self.render_to_response(context)
-signup_view = SignUpView.as_view()
 
 
 class IndexView(TemplateView):
@@ -65,4 +75,26 @@ class IndexView(TemplateView):
     def get(self, request, *args, **kwargs):
         return HttpResponseRedirect(reverse_lazy('home'))
 
-index_view = IndexView.as_view()
+
+class ProfileView(TemplateView):
+    """
+    """
+    def get_template_names(self):
+        return 'users/profile.html'
+    
+    def get(self, *args, **kwargs):
+        return self.render_to_response({
+            
+        })
+
+
+class ProfileEditorView(TemplateView):
+    """
+    """
+    def get_template_names(self):
+        return 'users/profile-editor.html'
+    
+    def get(self, *args, **kwargs):
+        return self.render_to_response({
+            'form': UserProfileForm(),
+        })

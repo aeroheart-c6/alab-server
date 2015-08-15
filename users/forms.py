@@ -5,7 +5,10 @@ from __future__ import (
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from users.models import User, UserProfile
+from users.models import (
+    User,
+    UserProfile,
+)
 
 
 class UserForm(forms.ModelForm):
@@ -46,4 +49,22 @@ class SignUpProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ('city', 'country')
+        fields = (
+            'city',
+            'country'
+        )
+
+class UserProfileForm(forms.ModelForm):
+    
+    class Meta:
+        model = UserProfile
+        fields = (
+            'gender',
+            'age',
+            'latitude',
+            'longitude',
+            'address',
+            'city',
+            'country',
+            'timezone',
+        )

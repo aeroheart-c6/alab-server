@@ -65,9 +65,6 @@ INTERNAL_APPS = (
     'organizations',
     'activities',
     'vending',
-    'cities_light',
-
-    'django_js_reverse',
 )
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -76,6 +73,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'cities_light',
+    'django_js_reverse',
 ) + INTERNAL_APPS
 
 MIDDLEWARE_CLASSES = (
