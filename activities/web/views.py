@@ -2,8 +2,13 @@ from __future__ import (
     absolute_import,
 )
 
+import httplib
 
-from django.http import JsonResponse
+from django.http import (
+    HttpResponse,
+    JsonResponse,
+)
+from django.utils.translation import ugettext as _
 from django.views.generic.base import (
     TemplateView,
     View,
@@ -61,7 +66,7 @@ class EngageActivityView(View):
     """
     """
 
-    def get(self, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         context = {}
         activity = Activity.objects.get(slug=self.request.GET.get('slug'))
         participant = self.request.user
@@ -74,3 +79,23 @@ class EngageActivityView(View):
         context['message'] = "SUCCESS"
 
         return JsonResponse(context)
+
+
+class GalleryView(View):
+    """
+    """
+    def get(self, request, *args, **kwargs):
+        if not request.is_ajax():
+            return HttpResponse(_('Invalid request'), status=httplib.BAD_REQUEST)
+        
+        user = request.user
+        
+        if not user.is_authenticated():
+            return JsonResponse({'message': _('Unauthorized')}, status=httplib.UNAUTHORIZED)
+        
+        if not user.profile.instagram_token:
+            return JsonResponse({'message': _('Access Token Required')}, status=httplib.FORBIDDEN)
+        
+        return JsonResponse([
+            
+        ])

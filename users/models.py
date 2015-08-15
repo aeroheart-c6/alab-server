@@ -34,6 +34,7 @@ class UserProfile(models.Model):
     country = models.CharField(max_length=100)
     timezone = models.CharField(max_length=100, **optional)
     photo = models.ImageField(upload_to="user/", **optional)
+    instagram_token = models.CharField(max_length=200, **optional)
     
     class Meta:
         verbose_name = _('User Profile')

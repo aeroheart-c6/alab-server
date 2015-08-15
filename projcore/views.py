@@ -1,7 +1,13 @@
+from __future__ import (
+    absolute_import,
+)
+
+from django.http import HttpResponse
 from django.views.generic.base import View
 
-from projcore.mixins import SiteWideMixin
 from organizations.models import Organization
+from projcore.mixins import SiteWideMixin
+
 
 class HomeView(SiteWideMixin, View):
 
@@ -12,3 +18,8 @@ class HomeView(SiteWideMixin, View):
             *args, **kwargs)
         context['organizations'] = Organization.objects.all().order_by('date_created')[:5]
         return context
+
+
+class InstagramRedirectView(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse()

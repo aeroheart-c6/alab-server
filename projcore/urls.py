@@ -6,10 +6,14 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from projcore.views import HomeView
+from projcore.views import (
+    InstagramRedirectView,
+    HomeView,
+)
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^complete/instagram/$', InstagramRedirectView.as_view(), name='instagram-callback'),
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^activity/', include('activities.web.urls', namespace='activities')),
