@@ -5,6 +5,7 @@ from __future__ import (
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils.translation import ugettext as _
 
 
 optional = {'null': True, 'blank': True}
@@ -21,8 +22,8 @@ class UserProfile(models.Model):
     GENDER_MALE = 'M'
     GENDER_FEMALE = 'F'
     GENDER_CHOICES = (
-        (GENDER_MALE, 'Male'),
-        (GENDER_FEMALE, 'Female')
+        (GENDER_MALE, _('Male')),
+        (GENDER_FEMALE, _('Female')),
     )
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='profile')
@@ -35,6 +36,10 @@ class UserProfile(models.Model):
     country = models.CharField(max_length=100)
     timezone = models.CharField(max_length=100, **optional)
     photo = models.ImageField(upload_to="user/", **optional)
+    
+    class Meta:
+        verbose_name = _('User Profile')
+        verbose_name_plural = _('User Profiles')
 
     def __unicode__(self):
         return self.user.full_name

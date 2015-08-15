@@ -44,14 +44,24 @@ class Activity(models.Model):
 
 
 class ActivityCategory(models.Model):
-    activity = models.ForeignKey('activities.Activity')
-    category = models.ForeignKey('activities.Category')
+    activity = models.ForeignKey('activities.Activity', related_name='+')
+    category = models.ForeignKey('activities.Category', related_name='+')
+    
+    class Meta:
+        verbose_name = _('Activity Category')
+        verbose_name_plural = _('Activity Categories')
+        unique_together = ('activity', 'category')
 
 
 class ActivityParticipant(models.Model):
-    activity = models.ForeignKey('activities.Activity')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    activity = models.ForeignKey('activities.Activity', related_name='+')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='+')
     datetime_joined = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name = _('Activity Participant')
+        verbose_name_plural = _('Activity Participants')
+        unique_together = ('activity', 'user')
 
     def __unicode__(self):
         return '{} - {}'.format(self.activity, self.user)

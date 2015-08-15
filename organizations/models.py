@@ -60,11 +60,12 @@ class OrganizationAdmin(models.Model):
         ordering  = ['organization']
         verbose_name = _('Organization Administrator')
         verbose_name_plural = _('Organization Administrators')
+        unique_together = ('organization', 'user')
 
 
 class OrganizationMember(models.Model):
-    organization = models.ForeignKey('organizations.Organization')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    organization = models.ForeignKey('organizations.Organization', related_name='+')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='+')
     datetime_joined = models.DateTimeField(auto_now_add=True)
     is_confirmed = models.BooleanField(default=False)
 
@@ -75,6 +76,7 @@ class OrganizationMember(models.Model):
         ordering = ['user']
         verbose_name = _('Organization Member')
         verbose_name_plural = _('Organization Members')
+        unique_together = ('organization', 'user')
 
 
 class OrganizationLink(models.Model):
@@ -88,11 +90,12 @@ class OrganizationLink(models.Model):
         ordering = ['child']
         verbose_name = _('Organization Link')
         verbose_name_plural = _('Organization Links')
+        unique_together = ('parent', 'child')
 
 
 class OrganizationCategory(models.Model):
-    organization = models.ForeignKey('organizations.Organization')
-    category = models.ForeignKey('organizations.Category')
+    organization = models.ForeignKey('organizations.Organization', related_name='+')
+    category = models.ForeignKey('organizations.Category', related_name='+')
 
     def __unicode__(self):
         return "{} as {}".format(self.organization, self.category)
@@ -101,6 +104,7 @@ class OrganizationCategory(models.Model):
         ordering = ['organization']
         verbose_name = _('Organization Category')
         verbose_name_plural = _('Organization Categories')
+        unique_together = ('organization', 'category')
 
 
 class Category(models.Model):
