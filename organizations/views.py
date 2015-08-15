@@ -6,7 +6,8 @@ from organizations.forms import (
     OrganizationApplicationForm
 )
 from organizations.models import (
-    Organization
+    Organization,
+    OrganizationMember,
 )
 from projcore.mixins import SiteWideMixin
 
@@ -51,6 +52,7 @@ class OrganizationProfilePremiumView(SiteWideMixin, View):
             return redirect('organizations:org_profile_free', id=org_id)
         return self.render_to_response(self.get_context_data())
 
+
 class OrganizationApplicationView(SiteWideMixin, View):
 
     template_name = "organizations/application.html"
@@ -71,3 +73,15 @@ class OrganizationApplicationView(SiteWideMixin, View):
                 'application_form':application_form,
                 'error': application_form.errors
             })
+
+
+class JoinOrganizationView(SiteWideMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        organization = Organization.objects.get(id=int(self.kwargs.get('id')))
+        user = request.user
+        if not organization.is_premium:
+            OrganizationMember.objects.create(
+                organization=organization,
+                user=user,
+            )
