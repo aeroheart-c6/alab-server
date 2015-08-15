@@ -7,12 +7,16 @@ from cities_light.models import (
     City,
     Country,
 )
-from django.db import transaction
+from django.conf import settings
 from django.contrib.auth import (
     authenticate,
     login
 )
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.core.urlresolvers import (
+    reverse,
+    reverse_lazy,
+)
+from django.db import transaction
 from django.http.response import HttpResponseRedirect
 from django.views.generic import (
     FormView,
@@ -89,7 +93,9 @@ class ProfileView(TemplateView):
 
     def get(self, *args, **kwargs):
         return self.render_to_response({
-
+            'client_id': settings.INSTAGRAM_KEY,
+            'client_secret': settings.INSTAGRAM_SECRET,
+            'redirect_url': 'http://alab:8000{}'.format(reverse('instagram-callback')),
         })
 
 

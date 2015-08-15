@@ -1,1 +1,20 @@
-HEY!
+{% extends 'base.html' %}
+{% load i18n staticfiles %}
+
+{% block content %}
+    <div>
+        <input id="authenticateBtn" type="button" value="Authenticate"/>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript">
+        var INSTAGRAM = {
+            clientId: '{{ client_id }}',
+            clientSecret: '{{ client_secret }}',
+            redirectUrl: '{{ redirect_url }}',
+        };
+    </script>
+    <script type="text/javascript" src="{% static 'js/activities/gallery.js' %}"></script>
+{% endblock %}
