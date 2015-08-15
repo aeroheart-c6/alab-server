@@ -3,16 +3,13 @@ from __future__ import (
 )
 from django.contrib.auth import (
     authenticate,
-    login,
-    logout as auth_logout
+    login
 )
-from django.contrib.auth.forms import AuthenticationForm
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 from django.http.response import HttpResponseRedirect
 from django.views.generic import (
     FormView,
-    TemplateView,
-    RedirectView
+    TemplateView
 )
 
 from users.forms import UserForm, SignUpProfileForm
@@ -43,8 +40,8 @@ class SignUpView(FormView):
             )
             user_profile.save()
             user = authenticate(
-                username=self.request.POST['username'],
-                password=self.request.POST['password']
+                username=user_form.data.get('username'),
+                password=user_form.data.get('password1')
             )
             login(self.request, user)
             return HttpResponseRedirect(self.success_url)
@@ -55,25 +52,6 @@ class SignUpView(FormView):
             return self.render_to_response(context)
 signup_view = SignUpView.as_view()
 
-
-class LoginView(FormView):
-
-    success_url = reverse_lazy('users:index')
-    form_class = AuthenticationForm
-    template_name = 'users/login.html'
-
-    def form_valid(self, form):
-        login(self.request, form.get_user())
-        return super(LoginView, self).form_valid(form)
-login_view = LoginView.as_view()
-
-
-class LogoutView(RedirectView):
-
-    def get_redirect_url(self):
-        auth_logout(self.request)
-        return reverse('users:index')
-logout_view = LogoutView.as_view()
 
 class IndexView(TemplateView):
 

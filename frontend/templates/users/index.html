@@ -1,1 +1,7 @@
-<h1>FOO BAR!!</h1>
+<h1>Alab</h1>
+{% if user.is_authenticated %}
+    <p>hello {{user.first_name}}</p>
+    <p><a href="{% url 'users:logout' %}">logout</a></p>
+{% else %}
+    <p><a href="{% url 'users:login' %}">login</a></p>
+{% endif %}
