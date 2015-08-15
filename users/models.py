@@ -11,8 +11,6 @@ from django.utils.translation import ugettext as _
 optional = {'null': True, 'blank': True}
 
 class User(AbstractUser):
-    pass
-
     @property
     def full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)

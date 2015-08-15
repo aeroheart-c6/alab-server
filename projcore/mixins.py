@@ -1,3 +1,7 @@
+from __future__ import (
+    absolute_import,
+)
+
 from django.views.generic.base import TemplateResponseMixin
 
 
@@ -11,7 +15,7 @@ class SiteWideMixin(TemplateResponseMixin):
     def __init__(self):
         user = None
 
-    def get_context_data(self, *args, **context):
+    def get_context_data(self, **context):
         return context
 
     def get(self, request, *args, **kwargs):
