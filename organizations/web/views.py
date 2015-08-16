@@ -100,3 +100,7 @@ class JoinOrganizationView(SiteWideMixin, View):
         context['message'] = "SUCCESS"
 
         return JsonResponse(context)
+
+class PricingView(SiteWideMixin, View):
+
+    template_name = "organizations/pricing.html"

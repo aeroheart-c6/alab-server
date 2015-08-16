@@ -15,6 +15,9 @@
 
                     {% if user.is_authenticated %}
                     <div class="row center">
+                        <a href="{% url 'organizations:pricing' %}" id="download-button" class="btn-large waves-effect waves-light red lighten-1">Apply your organization</a>
+                    </div>
+                    <div class="row center">
                         <a href="#" id="download-button" class="btn-large waves-effect waves-light red lighten-1">Find Activities</a>
                     </div>
                     <div class="row center">
