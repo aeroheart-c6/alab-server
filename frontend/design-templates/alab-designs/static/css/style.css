@@ -6,107 +6,107 @@
  * Made By MaterializeCSS.com
  */
 .logged-in{
-	background: #ebebeb;
+    background: #ebebeb;
 }
 nav ul a,
 nav .brand-logo {
-  	color: #444;
+    color: #444;
 }
 
 nav ul a{
-  	font-size: 14px;
-  	font-weight: 700;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 nav.white{
-  	box-shadow: none;
+    box-shadow: none;
 }
 
 p {
-  	line-height: 2rem;
+    line-height: 2rem;
 }
 
 .button-collapse {
-  	color: #e53935;
+    color: #e53935;
 }
 
 .parallax-container {
-  	min-height: 380px;
-  	line-height: 0;
-  	height: auto;
-  	color: rgba(255,255,255,.9);
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
 }
 
 #logo-container{
-  	display: none;
+    display: none;
 }
 
 .parallax.doc{
-	top: 60px;
+    top: 60px;
 }
 .parallax-container .section {
-  	width: 100%;
+    width: 100%;
 }
 
 .icon-block {
- 	 padding: 0 15px;
+     padding: 0 15px;
 }
 
 .icon-block .material-icons {
-  	font-size: inherit;
+    font-size: inherit;
 }
 
 footer.page-footer {
-  	margin: 0;
+    margin: 0;
 }
 
 /*********************************************
 **********************************************
-	        NAVIGATION CUSTOM
+            NAVIGATION CUSTOM
 *********************************************
 *********************************************/
 
 .menu-logo {
-  	height: auto;
-  	line-height: 29px;
+    height: auto;
+    line-height: 29px;
 }
 
 .menu-logo-wrap{
-  	margin-right: 20px;
+    margin-right: 20px;
 }
 
 .menu-logo-wrap:hover {
-  	background: none;
+    background: none;
 }
 
 .brand-logo img{
-  	padding-top: 8px;
+    padding-top: 8px;
 }
 
 .menu-logo img{
-  	margin-top: 8px; 
+    margin-top: 8px;
 }
 
 .nav-button .btn-small{
-  	height: 36px;
-  	line-height: 36px;
-  	border-radius: 10px;
-  	color: #fff;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 10px;
+    color: #fff;
 }
 
 nav ul li:hover, nav ul li.active{
-  	background: none;
+    background: none;
 }
 
 
 
 /*********************************************
 **********************************************
-	        HEADER TOP
+            HEADER TOP
 *********************************************
 *********************************************/
 .parallax-container.header-top{
-	display: table;
+    display: table;
     position: inherit;
 }
 
@@ -117,33 +117,33 @@ nav ul li:hover, nav ul li.active{
 }
 
 .parallax{
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .card-org .card .card-content{
-	position: relative;
+    position: relative;
 }
 
 .card-org .card .card-content .card-title{
-	font-size: 20px;
-	line-height: 24px;
+    font-size: 20px;
+    line-height: 24px;
     width: 80%;
     display: block;
     min-height: 50px;
 }
 
-.card-org i.right{    
-	position: absolute;
+.card-org i.right{
+    position: absolute;
     right: 11px;
     top: 20px;
 }
 .card-org .card .card-image img{
-	height: 100%;
-	width: auto;
+    height: 100%;
+    width: auto;
 }
 
 .card-org .card .card-reveal .card-title{
-	cursor: pointer;
+    cursor: pointer;
     display: block;
     font-size: 18px;
     line-height: 24px;
@@ -151,34 +151,34 @@ nav ul li:hover, nav ul li.active{
 }
 
 .card-org .card .card-image{
-	text-align: center;
+    text-align: center;
 }
 
 .card-org .card .card-image img:nth-child(2){
-	width: 100%;
-	height: auto;
-	z-index: -1;
-	position: absolute;
-	top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    position: absolute;
+    top: 0;
 
-  	-webkit-filter: blur(1px);
-  	-moz-filter: blur(1px);
-  	-o-filter: blur(1px);
-  	-ms-filter: blur(1px);
-  	filter: blur(1px);
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
 }
 .card-org .card-reveal p{
-	font-size: 18px;
-	line-height: 22px;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .card-org .card .card-action a{
-	color:#e53935;
+    color:#e53935;
     font-size: 14px;
 }
 
 .card-org .tabs{
-	width: 100%;
+    width: 100%;
     margin: 40px auto;
 }
 
@@ -187,9 +187,9 @@ nav ul li:hover, nav ul li.active{
 }
 
 .button-wrap {
-	text-align: center;
-	display: block;
-	padding: 10px 0 0;
+    text-align: center;
+    display: block;
+    padding: 10px 0 0;
 }
 
 .button-wrap .waves-effect{
@@ -197,40 +197,40 @@ nav ul li:hover, nav ul li.active{
 }
 
 .center-text{
-	text-align: center;
-	margin: 50px 0 0;
+    text-align: center;
+    margin: 50px 0 0;
 }
 .login-wrap .center-text.no-margin, .center-text.no-margin{
-	text-align: center;
-	margin: 0 0 0;
+    text-align: center;
+    margin: 0 0 0;
 }
 
 .filters-wrap{
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 h4.title{
-	margin: 0;
+    margin: 0;
 }
 
 .collection-bottom{
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .collection-bottom span{
-	font-size: 16px;
-	font-weight: 300;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .card-org .collection .collection-item.avatar{
-	width: 48%;
-	display: inline-block; 
-	border: none;
-	text-align: left;
+    width: 48%;
+    display: inline-block;
+    border: none;
+    text-align: left;
 }
-	
+
 .card-org .collection{
-	margin: 0.5rem 0 1rem 0;
+    margin: 0.5rem 0 1rem 0;
     border: none;
     border-radius: 2px;
     overflow: inherit;
@@ -239,30 +239,30 @@ h4.title{
 }
 
 .red-bg{
-	background: #e53935;
-	color: #fff;
+    background: #e53935;
+    color: #fff;
 }
 
 .page-footer h5{
-	font-size: 18px;
+    font-size: 18px;
     font-weight: 700;
 }
 
 .page-footer li{
-	font-size: 14px;
+    font-size: 14px;
     font-weight: 300;
 }
 
 .row.org{
-	display: table;
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
-	width: 100%;
+    display: table;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    width: 100%;
     height: 300px;
 }
 /*********************************************
 **********************************************
-	        LOGIN
+            LOGIN
 *********************************************
 *********************************************/
 .login-wrap{
@@ -276,32 +276,32 @@ h4.title{
 }
 
 .login-wrap.signup{
-	width: 800px;
+    width: 800px;
 }
 .login-wrap h2, .login-wrap h5{
-	color: #212121;
+    color: #212121;
 }
 
 .free-width{
-	width: 300px;
+    width: 300px;
 }
 
 .login-wrap .prefix{
-	color: #9e9e9e;
+    color: #9e9e9e;
 }
 
 .login-wrap .input-field{
     width: 300px;
     margin: 20px auto 0;
-	color: #212121;
+    color: #212121;
 }
 
 .login-wrap .input-field .prefix ~ input{
-	color: #212121 !important;
+    color: #212121 !important;
 }
 
 .btn-separator{
-	display: block;
+    display: block;
     width: 100%;
     position: relative;
     text-align: center;
@@ -311,146 +311,169 @@ h4.title{
 }
 
 .btn-social-wrap .btn-large:first-child{
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .fb{
-	background: #4d6094;
+    background: #4d6094;
 }
 
 .instagram{
-	background: #004879;
+    background: #004879;
 }
 .fb:hover{
-	background: #4d6094;
+    background: #4d6094;
 }
 
 .instagram:hover{
-	background: #004879;
+    background: #004879;
 }
 
 .btn-large.fb img, .btn-large.instagram img{
-	height: 25px;
+    height: 25px;
     margin-top: 16px;
 }
 
 .login-wrap .input-field.select-wrap{
-	margin-top: 50px;
+    margin-top: 50px;
 }
 /*********************************************
 **********************************************
-	        PROFILE
+            PROFILE
 *********************************************
 *********************************************/
 
 .col-custom.x2{
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
 }
 .col-custom.x1{
-	width: 100px;
-	display: inline-block;
-	vertical-align: middle;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .col-custom.x1 img{
-	width: 100%;    
+    width: 100%;
 }
 .col-custom.xx2{
-	display: table-cell;
-	vertical-align: middle;
-	margin-left: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    margin-left: 30px;
 }
 .col-custom.xx1{
-	width: 100px;
-	display: table-cell;
-	vertical-align: middle;
-	padding: 0 20px;
+    width: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
 }
 .col-custom.xx1 img{
-	width: 100%;
+    width: 100%;
 }
 
 nav .user-drop{
-	width: 150px;
-	text-align: right;
+    width: 150px;
+    text-align: right;
 }
 
 nav .user-drop img{
-	float: right;
-	width: 25px;
-	margin: 20px 0px 0 10px;
+    float: right;
+    width: 25px;
+    margin: 20px 0px 0 10px;
 }
 
 .username-prof{
-	font-size: 20px;
+    font-size: 20px;
 }
 
 .org .name-prof, .org .details-prof {
-	color: #fff;
+    color: #fff;
 }
 .name-prof{
-	font-size: 40px;
+    font-size: 40px;
     line-height: 38px;
 }
 
 .details-prof .ver{
-	font-size: 16px;
+    font-size: 16px;
     vertical-align: middle;
-	color: #33691e;
+    color: #33691e;
 }
 
 .details-prof .loc{
-	font-size: 16px;
+    font-size: 16px;
     color: #d50000;
     vertical-align: middle;
 }
 
 .logged-in .tabs{
-	background: none;
+    background: none;
 }
 
 .logged-in .card-org .collection .collection-item.avatar{
-	background: transparent;
+    background: transparent;
 }
 
 #dropdownx a{
-	font-size: 14px;
-	width: 100%
+    font-size: 14px;
+    width: 100%
 }
 
 #dropdownx a i{
-	font-size: 14px;
-	float: right;
+    font-size: 14px;
+    float: right;
 }
 
 .nav-prof-wrap{
-	font-size: 14px;
-	font-weight: 700;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .nav-prof-wrap img{
-	float: right;
+    float: right;
 }
 
 .nav-prof{
-	width: 25px;
+    width: 25px;
 }
 
 .side-prof{
-	width: 50px;
+    width: 50px;
     display: inline-block;
     vertical-align: middle;
 }
 
 .sidebar-prof{
-	display: inline-block;
+    display: inline-block;
     vertical-align: middle;
     line-height: 16px;
 }
 
 .side-uname{
-	font-size: 14px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.event-org{
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.event{
+    margin-top: 30px;
+}
+
+.funding{
+    font-size: 32px;
+}
+
+.funding small{
+    font-size: 12px;
+}
+
+.funding-days{
+    font-size: 16px;
     font-weight: 300;
 }
 
@@ -497,76 +520,76 @@ nav .user-drop img{
 }
 /*********************************************
 **********************************************
-	        MOBILE CUSTOM
+            MOBILE CUSTOM
 *********************************************
 *********************************************/
 @media only screen and (max-width : 1185px) {
-	.card-org .card .card-content .card-title {
-	    max-height: 50px;
-	    overflow: hidden;
-	}
+    .card-org .card .card-content .card-title {
+        max-height: 50px;
+        overflow: hidden;
+    }
 }
 @media only screen and (min-width : 993px) {
-	/*********************************************
-	**********************************************
-		        CARD FEATURES
-	*********************************************
-	*********************************************/
-	.card-org .card .card-image{
-		    height: 121px;
-	}
+    /*********************************************
+    **********************************************
+                CARD FEATURES
+    *********************************************
+    *********************************************/
+    .card-org .card .card-image{
+            height: 121px;
+    }
 
-	.card-org .featured .card .card-image{
-		height: 416px;
-	}
+    .card-org .featured .card .card-image{
+        height: 416px;
+    }
 }
 
 @media only screen and (min-width : 601px) and (max-width : 992px) {
-	/*********************************************
-	**********************************************
-		        CARD FEATURES
-	*********************************************
-	*********************************************/
-	.card-org .card .card-image{
-		    height: 121px;
-	}
+    /*********************************************
+    **********************************************
+                CARD FEATURES
+    *********************************************
+    *********************************************/
+    .card-org .card .card-image{
+            height: 121px;
+    }
 
-	.card-org .featured .card .card-image{
-		    height: 121px;
-	}
+    .card-org .featured .card .card-image{
+            height: 121px;
+    }
 }
 
 @media only screen and (max-width : 992px) {
-  	.parallax-container .section {
-    	position: absolute;
-    	top: 40%;
-  	}
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
 
-  	#logo-container{
-    	display: block;
-  	}
+    #logo-container{
+        display: block;
+    }
 
-	.card-org .collection .collection-item.avatar{
-		width: 90%;
-	}
-	.login-wrap.signup{
-		width: 300px;
-	}
-	.login-wrap.signup .input-field.col.s6{
-		width: 90%;
-	}
+    .card-org .collection .collection-item.avatar{
+        width: 90%;
+    }
+    .login-wrap.signup{
+        width: 300px;
+    }
+    .login-wrap.signup .input-field.col.s6{
+        width: 90%;
+    }
 
-	.free-width{
-		width: 100%;
-	}
+    .free-width{
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width : 600px) {
-	.card-org .card .card-image{
-		    height: 121px;
-	}
+    .card-org .card .card-image{
+            height: 121px;
+    }
 
-	.card-org .featured .card .card-image{
-		    height: 121px;
-	}
+    .card-org .featured .card .card-image{
+            height: 121px;
+    }
 }

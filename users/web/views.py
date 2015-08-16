@@ -93,9 +93,8 @@ class ProfileView(TemplateView):
 
     def get(self, *args, **kwargs):
         return self.render_to_response({
-            'client_id': settings.INSTAGRAM_KEY,
-            'client_secret': settings.INSTAGRAM_SECRET,
-            'redirect_url': 'http://alab:8000{}'.format(reverse('instagram-callback')),
+            'organizations': self.request.user.organizations.all(),
+            'activities': self.request.user.activities.all()
         })
 
 

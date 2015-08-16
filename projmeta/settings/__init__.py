@@ -208,6 +208,11 @@ SOCIAL_AUTH_PIPELINE = (
 THUMBNAIL_ALIASES = {
     '': {
         'avatar': {'size': (100, 100), 'crop': True},
+        'thumbnail_avatar': {'size': (25, 25), 'crop': True},
+        'organization_photo': {'size': (300, 300), 'crop': True},
+        'thumbnail_activity': {'size': (45, 45), 'crop': True},
+
+
     },
 }
 

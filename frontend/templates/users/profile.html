@@ -1,26 +1,9 @@
 
 {% extends 'base.html' %}
-{% load i18n staticfiles %}
+{% load i18n staticfiles thumbnail %}
 
-{% block content %}
-    <div>
-        <input id="authenticateBtn" type="button" value="Authenticate"/>
-    </div>
-{% endblock %}
 
-{% block js %}
-    {{ block.super }}
-    <script type="text/javascript">
-        var INSTAGRAM = {
-            clientId: '{{ client_id }}',
-            clientSecret: '{{ client_secret }}',
-            redirectUrl: '{{ redirect_url }}',
-        };
-    </script>
-    <script type="text/javascript" src="{% static 'js/activities/gallery.js' %}"></script>
-{% endblock %}
-{% extends "base.html" %}
-{% load staticfiles thumbnail %}
+{% block body_class %}logged-in{% endblock body_class %}
 
 {% block content %}
 
@@ -33,12 +16,130 @@
             <div class = "col-custom x2">
                 <div class = "username-prof">@{{ user.username }}</div>
                 <div class = "name-prof">{{ user.full_name }}</div>
-                <div class = "details-prof"><i class="ver large material-icons">verified_user</i>&nbsp; Verified User &nbsp;|&nbsp; <i class="loc large material-icons">location_on</i>&nbsp; from Davao City</div>
+                <div class = "details-prof"><i class="ver large material-icons">verified_user</i>&nbsp; Verified User &nbsp;|&nbsp; <i class="loc large material-icons">location_on</i>&nbsp; from {{user.profile.city|capfirst}}</div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row card-org">
+        <div class="col s12">
+
+
+            <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#organizations">Organizations</a></li>
+                <li class="tab col s3"><a href="#events">Events</a></li>
+            </ul>
+
+        <div id="organizations">
+            <div class="col s12 filters-wrap">
+                    <div class="filter right">
+                        <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Category</a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="#!">Alright</a></li>
+                            <li><a href="#!">Rock</a></li>
+                            <li><a href="#!">World</a></li>
+                        </ul>
+
+                        <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Sort By</a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown2' class='dropdown-content'>
+                            <li><a href="#!">Name</a></li>
+                            <li><a href="#!">Members</a></li>
+                        </ul>
+
+                        <a class='dropdown-button btn' href='#' data-activates='dropdown3'>Order</a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown3' class='dropdown-content'>
+                            <li><a href="#!">ASC</a></li>
+                            <li><a href="#!">DESC</a></li>
+                        </ul>
+                    </div>
+            </div>
+            {% for organization in organizations %}
+
+                    <div class = " col s6 m3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="{{organization.photo|thumbnail_url:'organization_photo' }}">
+                            </div>
+
+                            <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4">{{ organization.name }}<i class="material-icons right">more_vert</i></span>
+                            </div>
+
+                            <div class="card-action">
+                              <a href="
+                              {% if organization.is_premium %}
+                                {% url 'organizations:org_profile_premium' id=organization.pk %}
+                                {% else %}
+                                {% url 'organizations:org_profile_free' id=organization.pk %}
+                              {% endif %}
+                              ">Explore</a>
+                            </div>
+
+                            <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">{{ organization.name }}<i class="material-icons right">close</i></span>
+                                  <p>{{organization.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="events">
+            <div class="col s12 filters-wrap">
+                            <div class="filter right">
+                                <a class='dropdown-button btn' href='#' data-activates='dropdown5'>Category</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown5' class='dropdown-content'>
+                                    <li><a href="#!">Tech</a></li>
+                                    <li><a href="#!">Misc</a></li>
+                                    <li><a href="#!">Pet</a></li>
+                                </ul>
+
+                                <a class='dropdown-button btn' href='#' data-activates='dropdown4'>Month</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown4' class='dropdown-content'>
+                                    <li><a href="#!">Jan</a></li>
+                                    <li><a href="#!">Feb</a></li>
+                                    <li><a href="#!">Mar</a></li>
+                                </ul>
+
+                                <a class='dropdown-button btn' href='#' data-activates='dropdown6'>Order</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown6' class='dropdown-content'>
+                                    <li><a href="#!">ASC</a></li>
+                                    <li><a href="#!">DESC</a></li>
+                                </ul>
+                            </div>
+            </div>
+            <ul class="collection">
+            {% for activity in activities %}
+                <li class="collection-item avatar">
+                    <div class = "">
+                        <img src="{{ activity.photo|thumbnail_url:'thumbnail_activity' }}" class="circle">
+                        <p><small>{{ activity.datetime_held }}</small></p>
+                        <span class="title"><h5>Lorem ipsum dolor sit amet</h5></span>
+                         <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                        <div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>{{activity.participants.count}}</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+                    </div>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        </div>
         </div>
     </div>
 </div>
 
 {% include "snippets/footer-signup.html" %}
 {% endblock content %}
->>>>>>> Stashed changes

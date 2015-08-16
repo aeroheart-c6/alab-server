@@ -1,4 +1,4 @@
-{% load i18n staticfiles %}
+{% load i18n staticfiles thumbnail %}
 
 <!DOCTYPE html>
   <html>
@@ -18,7 +18,7 @@
         <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"  media="screen,projection"/>
     </head>
 
-    <body>
+    <body class="{% block body_class %}{% endblock body_class %}">
 
         <nav class="white" role="navigation">
             <div class="nav-wrapper container">
@@ -35,7 +35,16 @@
 
                 <ul class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
-                    <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="{% url 'users:profile' username=user.username %}">{{ user.first_name }}</a></li>
+                    <!-- <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="{% url 'users:profile' username=user.username %}">{{ user.first_name }}</a></li> -->
+                    <li><a class="dropdown-button user-drop" href="#" data-activates='dropdownx'>Hi, {{ user.first_name|capfirst }}! <img class = "nav-prof circle" src = "{{ user.profile.photo|thumbnail_url:'thumbnail_avatar' }}"></a>
+
+                        <ul id='dropdownx' class='dropdown-content'>
+                            <li class = "nav-prof-wrap"><a href = "{% url 'users:profile' username=user.username %}">Hi, {{ user.first_name|capfirst }}! &nbsp;<img class = "nav-prof circle" src = "{{ user.profile.photo|thumbnail_url:'thumbnail_avatar' }}"></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#!">Edit Profile &nbsp;<i class="material-icons prefix">settings</i></a></li>
+                            <li><a href="{% url 'users:logout' %}">Logout&nbsp;<i class="material-icons prefix">power_settings_new</i></a></li>
+                        </ul>
+                    </li>
                 {% else %}
                     <li><a href="{% url 'users:login' %}">Log In</a></li>
                     <li class = "nav-button "><a class="btn-small waves-effect waves-light red lighten-1" href="{% url 'users:signup' %}">Sign Up</a></li>
