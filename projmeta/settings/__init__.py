@@ -14,7 +14,7 @@ SECRET_KEY = '+_5^j+5x@%-_#if&5dd@()1ldv)@81r%him*j4y^rk&a*)#fa^'
 
 
 ALLOWED_HOSTS = []
-APPEND_SLASH = False
+APPEND_SLASH = True
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
