@@ -92,9 +92,14 @@ class ProfileView(TemplateView):
         return 'users/profile.html'
 
     def get(self, *args, **kwargs):
+        username = kwargs.get('username')
+        user = User.objects.filter(username=username)\
+                           .first()
+        
         return self.render_to_response({
-            'organizations': self.request.user.organizations.all(),
-            'activities': self.request.user.activities.all()
+            'user': user,
+            'organizations': user.organizations.all(),
+            'activities': user.activities.all()
         })
 
 
