@@ -113,6 +113,7 @@ nav ul li:hover, nav ul li.active{
 .parallax-container.header-top .section{
 	display: table-cell;
 	vertical-align: middle;
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .parallax{
