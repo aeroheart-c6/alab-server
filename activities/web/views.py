@@ -9,6 +9,7 @@ from django.http import (
     JsonResponse,
 )
 from django.utils.translation import ugettext as _
+from django.views.generic import DetailView
 from django.views.generic.base import (
     TemplateView,
     View,
@@ -81,21 +82,30 @@ class EngageActivityView(View):
         return JsonResponse(context)
 
 
+class DetailActivityView(DetailView):
+
+    """
+    """
+    slug_field = 'slug'
+    model = Activity
+    template_name = 'activities/detail.html'
+
+
 class GalleryView(View):
     """
     """
     def get(self, request, *args, **kwargs):
         if not request.is_ajax():
             return HttpResponse(_('Invalid request'), status=httplib.BAD_REQUEST)
-        
+
         user = request.user
-        
+
         if not user.is_authenticated():
             return JsonResponse({'message': _('Unauthorized')}, status=httplib.UNAUTHORIZED)
-        
+
         if not user.profile.instagram_token:
             return JsonResponse({'message': _('Access Token Required')}, status=httplib.FORBIDDEN)
-        
+
         return JsonResponse([
-            
+
         ])

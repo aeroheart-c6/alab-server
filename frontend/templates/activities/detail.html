@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load staticfiles thumbnail %}
+{% block body_class %}logged-in{% endblock body_class %}
+{% block content %}
+    <div class="container">
+            <div class="section">
+                <div class="row event" >
+                    <div class = "col-custom xx2">
+                        <div class = "name-prof">{{activity.title}}</div>
+                        <div class = "details-prof"><img src = "{{activity.owner.photo|thumbnail_url:'thumbnail_org'}}" class = "circle event-org">&nbsp; {{activity.owner.name}} &nbsp;
+                        {% if activity.owner.is_premium %}
+                        <i class="ver large material-icons">verified_user</i>&nbsp; Verified Organization &nbsp; |
+                        {% endif %}
+                        &nbsp; <i class="loc large material-icons">location_on</i>&nbsp; from {{activity.city|capfirst}}</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="container org-desc">
+            <div class="section">
+                <div class="row card-org">
+
+                    <div class="col s8 no-margin">
+                    <p>{{activity.description}}</p>
+                    </div>
+
+                    <div class="col s4 no-margin">
+                        <div class = "funding">
+                            $ 999,999 <small>/ $ 500,000</small>
+                        </div>
+                        <div class = "funding-days">
+                            <strong>12 hrs</strong> remaining
+                        </div>
+                        <div class="progress">
+                            <div class="determinate" style="width: 70%"></div>
+                        </div>
+                        <div class = "collection-bottom"><span><strong>200%</strong> funded</span>&nbsp; | &nbsp;<span><strong>57</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
+
+                        {% for participant in activity.participants.all %}
+                        <div class = "event-user">
+                            <div class= "event-user-pic">
+                                <img src = "{{participant.profile.photo|thumbnail_url:'thumbnail_activity'}}" class = "circle">
+                            </div>
+                            <div class= "event-user-details">
+                                <div class = "event-user-name">
+                                    <a href = "#">{{participant.full_name}}</a> will join this event
+                                </div>
+                                <div class = "event-user-affiliate" >
+                                    Funded $25 for this event
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

@@ -130,7 +130,7 @@
                         </div>
                         <div class = "collection-bottom"><span><strong>500%</strong> funded</span>&nbsp; | &nbsp;<span><strong>{{activity.participants.count}}</strong> Participants</span>&nbsp; | &nbsp;<span><strong>0</strong> days left</span></div>
                     </div>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                        <a href="{% url 'activities:detail' pk=activity.id %}" class="secondary-content"><i class="material-icons">grade</i></a>
                 </li>
             {% endfor %}
             </ul>
