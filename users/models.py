@@ -41,4 +41,4 @@ class UserProfile(models.Model):
         verbose_name_plural = _('User Profiles')
 
     def __unicode__(self):
-        return self.user.full_name
+        return self.user.full_name.strip() or self.user.username
