@@ -518,6 +518,72 @@ nav .user-drop img{
 	height: 12px;
 	width: 12px;
 }
+
+
+/* line 81, ../../sass/presets/_sections.scss */
+.pricing {
+  margin: 50px 0;
+}
+/* line 83, ../../sass/presets/_sections.scss */
+.pricing .price-head {
+  background: #F44336;
+  color: #fff;
+}
+/* line 87, ../../sass/presets/_sections.scss */
+.pricing .price-head .price-name {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 50px 0 30px;
+}
+/* line 95, ../../sass/presets/_sections.scss */
+.pricing .price-head .price {
+  color: #fff;
+  font-size: 80px;
+  line-height: 80px;
+}
+/* line 99, ../../sass/presets/_sections.scss */
+.pricing .price-head .price small {
+  font-size: 20px;
+  vertical-align: top;
+  line-height: 20px;
+}
+/* line 106, ../../sass/presets/_sections.scss */
+.pricing .price-head .price-person {
+  color: #fff;
+  padding: 0 0 50px;
+}
+/* line 114, ../../sass/presets/_sections.scss */
+.pricing .best .price-head {
+  background: #e53935;
+}
+/* line 119, ../../sass/presets/_sections.scss */
+.pricing .price-details {
+  padding: 50px 20px 20px;
+  font-size: 14px;
+  min-height: 160px;
+  text-align: center;
+}
+/* line 126, ../../sass/presets/_sections.scss */
+.pricing .price-btn {
+  padding: 00px 0 50px;
+  border-bottom: 1px solid #F44336;
+}
+
+/* line 134, ../../sass/presets/_sections.scss */
+.pricing-p {
+  display: block;
+}
+/* line 137, ../../sass/presets/_sections.scss */
+.pricing-p a {
+  text-decoration: underline;
+}
+
+.pricing.col.s9{
+	    margin: 0 auto;
+    float: none;
+}
 /*********************************************
 **********************************************
             MOBILE CUSTOM
